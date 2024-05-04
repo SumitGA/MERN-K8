@@ -42,6 +42,7 @@ kind: Service
 metadata:
   name: webapp-service
 spec:
+  type: NodePort
   selector:
     app: webapp
   ports:
