@@ -1,4 +1,4 @@
-apiVerison: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mongo-deployment
@@ -22,12 +22,12 @@ spec:
         env:
           - name: MONGO_INITDB_ROOT_USERNAME
             valueFrom:
-              SecretKeyRef:
+              secretKeyRef:
                 name: mongo-secret
                 key:  mongo-user
           - name: MONGO_INITDB_ROOT_PASSWORD
             valueFrom:
-              SecretKeyRef:
+              secretKeyRef:
                 name: mongo-secret
                 key:  mongo-password
 
